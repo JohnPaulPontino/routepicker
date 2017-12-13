@@ -15,3 +15,10 @@ socket.on('disconnect',function(){
 socket.on('newMessage',function (message) {
     console.log('message from server: ', message);
 });
+
+socket.emit('createMessage',{
+    from: 'Test',
+    text: 'Test Content'
+},function (data) {
+    console.log('Got it', data);
+});
