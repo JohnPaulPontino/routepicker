@@ -37,7 +37,7 @@ io.on('connection',(socket)=>{
         callback(data);
     });
 
-     //On user login alert to all
+    //On user login alert to all
     socket.broadcast.emit('newMessage',generateMessage('Admin', 'New User Join'));
 
     socket.on('createMessage',(message, callback)=>{

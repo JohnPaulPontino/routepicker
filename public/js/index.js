@@ -16,9 +16,20 @@ socket.on('newMessage',function (message) {
     console.log('message from server: ', message);
 });
 
+socket.on('loginResponse',function (message) {
+    console.log('Your response is: ',message);
+})
+
 socket.emit('createMessage',{
     from: 'Test',
     text: 'Test Content'
 },function (data) {
     console.log('Got it', data);
+});
+
+socket.emit('userLogin',{
+    username:'jhaypee',
+    password:'paswword123'
+},function (message) {
+    console.log(message);
 });
